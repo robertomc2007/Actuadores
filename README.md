@@ -1,1 +1,7 @@
 # Actuadores
+
+Motores
+
+Servomotores
+
+Relevadores
