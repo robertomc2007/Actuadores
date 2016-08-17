@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #ifdef __AVR__
-  #include <avr/power.h>
+#include <avr/power.h>
 #endif
 
 #define PIN 6
@@ -24,29 +24,58 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(3, PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
   strip.begin();
-  strip.show(); // Initialize all pixels to 'off'
+  strip.show(); // TODOS LOS PIXELES 'off'
 }
 
 void loop() {
-  // Some example procedures showing how to display to the pixels:
+  // EJEMPLO DE COLORES
 
-  colorWipe(strip.Color(255, 0, 0), 50); 
-      strip.setPixelColor(0, strip.Color(255, 0, 0));// Red
-      strip.setPixelColor(1, strip.Color(255, 0, 0));
-      strip.setPixelColor(2, strip.Color(255, 0, 0));
-    strip.show();
-    delay(wait);
-    
-  colorWipe(strip.Color(0, 255, 0), 50); // Green
-  colorWipe(strip.Color(0, 0, 255), 50); // Blue
+  strip.setPixelColor(0, strip.Color(255, 0, 0));// Red
+  strip.setPixelColor(1, strip.Color(255, 0, 0));
+  strip.setPixelColor(2, strip.Color(255, 0, 0));
+  strip.show();
+  delay(1000);
 
-}
+  strip.setPixelColor(0, strip.Color(0, 255, 0));// Green
+  strip.setPixelColor(1, strip.Color(0, 255, 0));
+  strip.setPixelColor(2, strip.Color(0, 255, 0));
+  strip.show();
+  delay(1000);
 
-// Fill the dots one after the other with a color
-void colorWipe(uint32_t c, uint8_t wait) {
-  for(uint16_t i=0; i<strip.numPixels(); i++) {
-    strip.setPixelColor(i, c);
-    strip.show();
-    delay(wait);
-  }
+  strip.setPixelColor(0, strip.Color(0, 0, 255));// Blue
+  strip.setPixelColor(1, strip.Color(0, 0, 255));
+  strip.setPixelColor(2, strip.Color(0, 0, 255));
+  strip.show();
+  delay(1000);
+
+
+// SEMAFORO
+  strip.setPixelColor(0, strip.Color(255, 0, 0));// RED
+  strip.setPixelColor(1, strip.Color(0, 0, 0));
+  strip.setPixelColor(2, strip.Color(0, 0, 0));
+  strip.show();
+  delay(1000);
+
+  //0xFFFF00 yellow
+
+  strip.setPixelColor(0, strip.Color(0, 0, 0));
+  strip.setPixelColor(1, strip.Color(255, 200, 0));//YELLOW
+  strip.setPixelColor(2, strip.Color(0, 0, 0));
+  strip.show();
+  delay(1000);
+
+  strip.setPixelColor(0, strip.Color(0, 0, 0));
+  strip.setPixelColor(1, strip.Color(0, 0, 0));
+  strip.setPixelColor(2, strip.Color(0, 255, 0)); //GREEN
+  strip.show();
+  delay(1000);
+
+//BLANCO
+
+  strip.setPixelColor(0, strip.Color(255,255,255));
+  strip.setPixelColor(1, strip.Color(255,255,255));
+  strip.setPixelColor(2, strip.Color(255,255,255));
+  strip.show();
+  delay(1000);
+  
 }
