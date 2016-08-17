@@ -1,5 +1,7 @@
 # Actuadores
 
+Indicadores
+
 Motores
 
 Servomotores
