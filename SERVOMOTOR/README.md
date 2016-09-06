@@ -31,3 +31,38 @@ Por otra parte, se conecta solidario a uno de los egranajes un sensor de posici√
 DIAGRAMA
 
 PROGRAMA
+
+<pre>
+<font color="#95a5a6">/* Sweep</font>
+<font color="#95a5a6"> by BARRAGAN &lt;</font><u><font color="#95a5a6">http://barraganstudio.com</font></u><font color="#95a5a6">&gt;</font>
+<font color="#95a5a6"> This example code is in the public domain.</font>
+<font color="#95a5a6"></font>
+<font color="#95a5a6"> modified 8 Nov 2013</font>
+<font color="#95a5a6"> by Scott Fitzgerald</font>
+<font color="#95a5a6"> </font><u><font color="#95a5a6">http://www.arduino.cc/en/Tutorial/Sweep</font></u><font color="#95a5a6"></font>
+<font color="#95a5a6">*/</font>
+
+<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><b><font color="#d35400">Servo</font></b><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+
+<b><font color="#d35400">Servo</font></b> <font color="#000000">myservo</font><font color="#000000">;</font> &nbsp;<font color="#434f54">// create servo object to control a servo</font>
+<font color="#434f54">// twelve servo objects can be created on most boards</font>
+
+<font color="#00979c">int</font> <font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;<font color="#434f54">// variable to store the servo position</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">// attaches the servo on pin 9 to the servo object</font>
+<font color="#000000">}</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&lt;=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">// goes from 0 degrees to 180 degrees</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">// in steps of 1 degree</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">// tell servo to go to position in variable 'pos'</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">// waits 15ms for the servo to reach the position</font>
+ &nbsp;<font color="#000000">}</font>
+ &nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#000000">pos</font> <font color="#434f54">=</font> <font color="#000000">180</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">&gt;=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">pos</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">// goes from 180 degrees to 0 degrees</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">myservo</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">pos</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">// tell servo to go to position in variable 'pos'</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">15</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">// waits 15ms for the servo to reach the position</font>
+ &nbsp;<font color="#000000">}</font>
+<font color="#000000">}</font>
+
+</pre>
