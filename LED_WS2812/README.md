@@ -36,7 +36,7 @@ Con la máxima intensidad de brillo, cada elemento de color consume 50mA (0,05A)
 
 DIAGRAMA
 
-
+![Conexion](./WS2812_SOLO_bb.jpg)
 
 PROGRAMAS
 
