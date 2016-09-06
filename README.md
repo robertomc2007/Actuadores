@@ -12,7 +12,7 @@
 
 [Indicadores](.//LED/)
 
-Servomotores
+[Servomotores](.//SERVOMOTOR/)
 
 Motores
 
