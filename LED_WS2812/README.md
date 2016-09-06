@@ -20,9 +20,9 @@ Una condición especial de arranque al momento de alimentar los componentes, col
 
 Luego de este estado de RESET al inicio de alimentación, el protocolo contempla una señal de entrada para poner en estado de RESET a los dispositivos pero de manera programada.
 
-El procesador maestro debe programarse siguiendo el protocolo para el controlador integrado de manera que el controlador serializa en el primer DIN y en el tiempo 3 bytes que se corresponden con los niveles de intensidad de cada color.
+El procesador maestro debe programarse siguiendo el protocolo para el controlador integrado de manera que el procesador maestro (Arduino) serializa en el tiempo 3 bytes (24bits) por cada LED WS2812 y que se corresponden con los niveles de intensidad de cada color y los aplica en la conexión con el primer DIN. La intensidad de cada elemento de color se establece por el valor entre 0 y 255 de cada byte, adonde "0" es apagado y "255" es brillo máximo.
 
-Con esta técnica, los 3 primeros bytes son tomados como los parámetros de color del primer LED WS2812 de una cadena, retransmitiendo por su terminal DOUT todos los que lleguen despues del tercero, lo que ingresará por el segundo DIN del segundo LED y así sucesivamente.
+Con esta técnica, los 3 primeros bytes son tomados por el controlador integrado como los parámetros de color del primer LED WS2812 de una cadena, retransmitiendo por su terminal DOUT todos los datos que lleguen despues del tercero, lo que ingresará por el segundo DIN del segundo LED y así sucesivamente. Luego si el procesador maestro emite la señal de RESET, esta se reproducirá en secuencia y en serie en todos los elementos de la cadena.
 
 ## CARACTERISTICAS
 
@@ -30,11 +30,11 @@ Con esta técnica, los 3 primeros bytes son tomados como los parámetros de colo
 
 ## ALIMENTACIÓN EXTERNA (en caso de mas de 1 elemento)
 
-Con la máxima intensidad de brillo, cada elemento de color consume 50mA (0,05A) cada uno. En la placa Arduino, el terminal de conexión +5V es capaz de proveer no mas de 100mA de manera segura. Es por este motivo que debe analizarse el uso de una fuente externa para la alimentación de mas de 1 LED WS2812.
+Con la máxima intensidad de brillo, cada elemento de color consume 50mA (0,05A) cada uno. totalizando a pleno una intensidad por LED WS2812 del orden de los 150mA (0,15A). En la placa Arduino, el terminal de conexión +5V es capaz de proveer no mas de 100mA de manera segura. Es por este motivo que debe analizarse o bien el uso de una fuente externa para la alimentación de mas de 1 LED WS2812 o bien las capacidades del puerto USB para alimentar al menos 1 LED.
 
 ![Alimentación](./arduino_no_computer_power.jpg)
 
-DIAGRAMA
+DIAGRAMA (Alimentación por puerto USB)
 
 ![Conexion](./WS2812_SOLO_bb.jpg)
 
