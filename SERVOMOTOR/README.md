@@ -30,6 +30,8 @@ Por otra parte, se conecta solidario a uno de los egranajes un sensor de posici√
 
 DIAGRAMA
 
+![ServoSolo](./SERVO_SOLO_bb.jpg)
+
 PROGRAMA
 
 <pre>
