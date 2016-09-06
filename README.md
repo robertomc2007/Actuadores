@@ -10,7 +10,11 @@
 
 ## CASOS DE USO
 
-[Indicadores](.//LED/)
+Indicadores 
+
+[LED SIMPLE](.//LED/)
+
+[LED PROGRAMABLE](.//LED_WS2812/)
 
 [Servomotores](.//SERVOMOTOR/)
 
