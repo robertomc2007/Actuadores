@@ -51,22 +51,22 @@ void loop() {
 
 // SEMAFORO
   strip.setPixelColor(0, strip.Color(255, 0, 0));// RED
-  strip.setPixelColor(1, strip.Color(0, 0, 0));
-  strip.setPixelColor(2, strip.Color(0, 0, 0));
+  strip.setPixelColor(1, strip.Color(255, 200, 0));//YELLOW
+  strip.setPixelColor(2, strip.Color(0, 255, 0)); //GREEN
   strip.show();
   delay(1000);
 
   //0xFFFF00 yellow
 
-  strip.setPixelColor(0, strip.Color(0, 0, 0));
-  strip.setPixelColor(1, strip.Color(255, 200, 0));//YELLOW
-  strip.setPixelColor(2, strip.Color(0, 0, 0));
+  strip.setPixelColor(0, strip.Color(255, 200, 0));//YELLOW
+  strip.setPixelColor(1, strip.Color(255, 0, 0));// RED
+  strip.setPixelColor(2, strip.Color(0, 255, 0)); //GREEN
   strip.show();
   delay(1000);
 
-  strip.setPixelColor(0, strip.Color(0, 0, 0));
-  strip.setPixelColor(1, strip.Color(0, 0, 0));
-  strip.setPixelColor(2, strip.Color(0, 255, 0)); //GREEN
+  strip.setPixelColor(0, strip.Color(0, 255, 0)); //GREEN
+  strip.setPixelColor(1, strip.Color(255, 200, 0));//YELLOW
+  strip.setPixelColor(2, strip.Color(255, 0, 0));// RED
   strip.show();
   delay(1000);
 
