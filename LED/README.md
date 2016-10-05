@@ -71,5 +71,5 @@ void loop() {
 
 ## PRÁCTICA: Led controlado por pulsador
 
-![PROGRAMA](./RBD_BLINK_TEST.ino)
+[PROGRAMA](./RBD_BLINK_TEST.ino)
 
